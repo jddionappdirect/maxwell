@@ -22,6 +22,7 @@ public class MaxwellOutputConfig {
 	public EncryptionMode encryptionMode;
 	public String secretKey;
 	public boolean zeroDatesAsNull;
+	public boolean outputRecordTimestampAsMilliseconds;
 
 	public MaxwellOutputConfig() {
 		this.includesBinlogPosition = false;
@@ -39,6 +40,7 @@ public class MaxwellOutputConfig {
 		this.excludeColumns = new ArrayList<>();
 		this.encryptionMode = EncryptionMode.ENCRYPT_NONE;
 		this.secretKey = null;
+		this.outputRecordTimestampAsMilliseconds = false;
 	}
 
 	public boolean encryptionEnabled() {

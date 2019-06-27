@@ -108,6 +108,7 @@ output_primary_keys            | BOOLEAN  | DML records include list of values t
 output_primary_key_columns     | BOOLEAN  | DML records include list of columns that make up a row's primary key | false
 output_ddl                     | BOOLEAN  | output DDL (table-alter, table-create, etc) events  | false
 output_null_zerodates          | BOOLEAN  | should we transform '0000-00-00' to null? | false
+output_record_ts_as_millis     | BOOLEAN  | records's ts field is in milliseconds instead of seconds | false
 &nbsp;
 **filtering**
 filter                         | STRING            | filter rules, eg `exclude: db.*, include: *.tbl, include: *./bar(bar)?/, exclude: foo.bar.col=val` |

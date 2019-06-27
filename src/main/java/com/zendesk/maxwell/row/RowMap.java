@@ -146,7 +146,8 @@ public class RowMap implements Serializable {
 		}
 
 		g.writeStringField(FieldNames.TYPE, this.rowType);
-		g.writeNumberField(FieldNames.TIMESTAMP, this.timestampSeconds);
+		g.writeNumberField(FieldNames.TIMESTAMP,
+				outputConfig.outputRecordTimestampAsMilliseconds ? this.timestampMillis : this.timestampSeconds);
 
 		if ( outputConfig.includesCommitInfo ) {
 			if ( this.xid != null )

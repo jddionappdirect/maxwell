@@ -227,6 +227,7 @@ public class MaxwellConfig extends AbstractConfig {
 		parser.accepts( "output_primary_keys", "produced DML records include list of values that make up a row's primary key; [true|false]. default: false" ).withOptionalArg();
 		parser.accepts( "output_primary_key_columns", "produced DML records include list of columns that make up a row's primary key; [true|false]. default: false" ).withOptionalArg();
 		parser.accepts( "output_null_zerodates", "convert '0000-00-00' dates/datetimes to null default: false" ).withOptionalArg();
+		parser.accepts( "output_record_ts_as_millis", "produced records ts field in milliseconds instead of seconds; [true|false]. default: false" ).withOptionalArg();
 		parser.accepts( "output_ddl", "produce DDL records to ddl_kafka_topic [true|false]. default: false" ).withOptionalArg();
 		parser.accepts( "exclude_columns", "suppress these comma-separated columns from output" ).withRequiredArg();
 		parser.accepts( "ddl_kafka_topic", "optionally provide an alternate topic to push DDL records to. default: kafka_topic" ).withRequiredArg();
@@ -523,6 +524,7 @@ public class MaxwellConfig extends AbstractConfig {
 		outputConfig.includesPrimaryKeyColumns = fetchBooleanOption("output_primary_key_columns", options, properties, false);
 		outputConfig.outputDDL	= fetchBooleanOption("output_ddl", options, properties, false);
 		outputConfig.zeroDatesAsNull = fetchBooleanOption("output_null_zerodates", options, properties, false);
+		outputConfig.outputRecordTimestampAsMilliseconds = fetchBooleanOption("output_record_ts_as_millis", options, properties, false);
 		this.excludeColumns     = fetchOption("exclude_columns", options, properties, null);
 
 		String encryptionMode = fetchOption("encrypt", options, properties, "none");
