@@ -107,6 +107,9 @@ password=maxwell
 # records include commit and xid (default true)
 #output_commit_info=true
 
+# produced records ts field in milliseconds instead of seconds (default false)
+#output_record_ts_as_millis=true
+
 # This controls whether maxwell will output JSON information containing
 # DDL (ALTER/CREATE TABLE/ETC) infromation. (default: false)
 # See also: ddl_kafka_topic
